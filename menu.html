@@ -6,6 +6,8 @@
 <meta name="theme-color" content="#F25238" />
 <title>Golconda · Menú del día</title>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Creepster&display=swap" />
+
 <!-- Lector de Excel (SheetJS) -->
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 
@@ -46,7 +48,7 @@
 *{ box-sizing:border-box; margin:0; padding:0; }
 html{ -webkit-text-size-adjust:100%; }
 body{
-  font-family:"Amsi Pro Cond", system-ui, sans-serif;
+  font-family:"Amsi Pro Cond", "Barlow Condensed", system-ui, sans-serif;
   color:var(--espresso);
   background:var(--masa);
   line-height:1.5;
@@ -310,6 +312,22 @@ body{
 .wa-flotante:active{ transform:translateX(-50%) translateY(0); }
 .wa-flotante svg{ flex:0 0 auto; }
 
+
+/* ===================================================================
+   AVISO DE TEMPORADA (Halloween) — borrar después del 31 de octubre
+   =================================================================== */
+.aviso-temporada{
+  display:flex; align-items:center; gap:12px;
+  margin:14px 16px 0; padding:12px 16px;
+  background:#1A110C; color:#FFF0E2; text-decoration:none;
+  border-radius:var(--radio); box-shadow:0 8px 22px rgba(26,17,12,.25);
+}
+.aviso-temporada svg{ flex:0 0 auto; width:34px; height:34px; }
+.aviso-temporada .txt{ flex:1; line-height:1.15; }
+.aviso-temporada .txt b{ display:block; font-family:"Creepster","Amsi Pro Cond",cursive; font-weight:400; font-size:21px; letter-spacing:1px; color:#FF8F3F; }
+.aviso-temporada .txt span{ font-size:14px; color:#CBB4A1; }
+.aviso-temporada .ir{ font-weight:700; font-size:22px; color:#F25238; }
+
 /* Accesibilidad y movimiento reducido */
 :focus-visible{ outline:3px solid var(--miel); outline-offset:2px; border-radius:6px; }
 @media (prefers-reduced-motion: reduce){
@@ -339,6 +357,19 @@ body{
     <div class="lema">Menú del día</div>
     <a class="cambiar" href="index.html">↩ Cambiar punto de venta</a>
   </header>
+
+
+  <!-- AVISO DE TEMPORADA (Halloween) — borrar después del 31 de octubre -->
+  <a class="aviso-temporada" href="temporada.html">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M20 7c1-3 3-4 5-4" stroke="#3B5D2A" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <ellipse cx="13" cy="23" rx="10" ry="13" fill="#F25238"/><ellipse cx="27" cy="23" rx="10" ry="13" fill="#F25238"/>
+      <ellipse cx="20" cy="23" rx="10" ry="14" fill="#FF8F3F"/>
+      <path d="M10 19l5-5 3 6zM30 19l-5-5-3 6zM9 26q11 9 22 0l-3 1-2 3-3-3-3 3-3-3-2 3-3-3z" fill="#1A110C"/>
+    </svg>
+    <span class="txt"><b>Edición Halloween</b><span>Caja de galletas ×12 y kit para decorar</span></span>
+    <span class="ir">→</span>
+  </a>
 
   <nav class="dias" aria-label="Días de la semana">
     <div class="dias-track" id="diasTrack" role="tablist"></div>
